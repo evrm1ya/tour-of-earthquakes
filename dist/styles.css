@@ -1,0 +1,11 @@
+.loading {
+  margin-left: 20px;
+}
+
+.earthquake-table-container {
+  margin-top: 40px;
+}
+
+.earthquake-table th, td {
+  padding: 5px 10px;
+}

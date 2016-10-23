@@ -1,0 +1,14 @@
+import 'babel-polyfill';
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './containers/App';
+
+var moment = require('moment');
+window.moment = moment;
+
+render(
+  <App />,
+  document.getElementById('root')
+);
+
