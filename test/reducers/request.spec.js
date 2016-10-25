@@ -98,49 +98,31 @@ describe('request reducer', () => {
 
     const state2 = rootReducer(state1, creators.toggleIsRequesting());
 
-    expect(state2.request).to.eql({
-      endtime: {
-        day: '',
-        hour: '',
-        minute: '',
-        month: '',
-        second: '',
-        year: ''
-      },
-      isRequesting: true,
-      lastRequestUrl: '',
-      starttime: {
-        day: '11',
-        hour: '14',
-        minute: '02',
-        month: '08',
-        second: '45',
-        year: '2016'
-      }
+    expect(state2.request.starttime).to.eql({
+      day: '11',
+      hour: '14',
+      minute: '02',
+      month: '08',
+      second: '45',
+      year: '2016'
     });
+
+    expect(state2.request.lastRequestUrl).to.eql('');
+    expect(state2.request.isRequesting).to.be.true;
 
     const state3 = rootReducer(state2, creators.setLastRequestUrl('api.test.com'));
 
-    expect(state3.request).to.eql({
-      endtime: {
-        day: '',
-        hour: '',
-        minute: '',
-        month: '',
-        second: '',
-        year: ''
-      },
-      isRequesting: true,
-      lastRequestUrl: 'api.test.com',
-      starttime: {
-        day: '11',
-        hour: '14',
-        minute: '02',
-        month: '08',
-        second: '45',
-        year: '2016'
-      }
+    expect(state3.request.starttime).to.eql({
+      day: '11',
+      hour: '14',
+      minute: '02',
+      month: '08',
+      second: '45',
+      year: '2016'
     });
+
+    expect(state3.request.isRequesting).to.be.true;
+    expect(state3.request.lastRequestUrl).to.equal('api.test.com');
   });
 });
 
