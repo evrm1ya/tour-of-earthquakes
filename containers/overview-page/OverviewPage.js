@@ -1,4 +1,5 @@
 import React from 'react';
+import TimePeriodRequester from '../../components/forms/TimePeriodRequester';
 
 const OverviewPage = React.createClass({
   render: function() {
@@ -6,7 +7,8 @@ const OverviewPage = React.createClass({
       <div className='container-fluid overview-page'>
         <h1>Overview</h1>
 
-        <section className='overview-requester-section'>
+        <section className='container-fluid overview-requester-section'>
+          <TimePeriodRequester />
         </section>
 
         <section className='overview-graphs-section'>

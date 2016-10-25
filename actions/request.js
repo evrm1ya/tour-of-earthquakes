@@ -19,32 +19,6 @@ export function updateRequestStarttime(payload) {
   };
 }
 
-export function updateRequestTime(payload) {
-  return dispatch => {
-    const { day, hour, minute, month, second, type, year } = payload;
-
-    if (type === 'end') {
-      return dispatch(updateRequestEndtime({ 
-        day, 
-        hour, 
-        minute, 
-        month, 
-        second, 
-        year 
-      }));
-    }
-
-    return dispatch(updateRequestStarttime({ 
-      day, 
-      hour, 
-      minute, 
-      month, 
-      second, 
-      year 
-    }));
-  };
-}
-
 export function setLastRequestUrl(requestUrl) {
   return {
     type: SET_LAST_REQUEST_URL,

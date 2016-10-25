@@ -1,3 +1,4 @@
+import { merge } from 'ramda';
 import INITIAL_STATE from './initial-state';
 import {
   UPDATE_REQUEST_ENDTIME,
@@ -21,12 +22,12 @@ export default function request(state = INITIAL_STATE.request, action) {
     case UPDATE_REQUEST_ENDTIME:
       return {
         ...state,
-        endtime: action.payload
+        endtime: merge(state.endtime, action.payload)
       };
     case UPDATE_REQUEST_STARTTIME:
       return {
         ...state,
-        starttime: action.payload
+        starttime: merge(state.starttime, action.payload)
       };
     default:
       return state;

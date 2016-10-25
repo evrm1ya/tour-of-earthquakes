@@ -38,17 +38,13 @@ describe('request reducer', () => {
     const newerState = rootReducer(newState, creators.updateRequestEndtime({
       day: '11',
       hour: '14',
-      minute: '02',
-      month: '08',
-      second: '45',
-      year: '2016'
     }));
 
     expect(newerState.request.endtime).to.eql({
       day: '11',
       hour: '14',
-      minute: '02',
-      month: '08',
+      minute: '01',
+      month: '09',
       second: '45',
       year: '2016'
     });
@@ -75,16 +71,14 @@ describe('request reducer', () => {
 
     const newerState = rootReducer(newState, creators.updateRequestStarttime({
       day: '11',
-      hour: '14',
       minute: '02',
       month: '08',
       second: '45',
-      year: '2016'
     }));
 
     expect(newerState.request.starttime).to.eql({
       day: '11',
-      hour: '14',
+      hour: '13',
       minute: '02',
       month: '08',
       second: '45',
