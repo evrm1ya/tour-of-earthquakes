@@ -1,3 +1,4 @@
+// @TODO: Whittle this down
 import React, { PropTypes } from 'react';
 import YearSelector from './inputs/YearSelector';
 import MonthSelector from './inputs/MonthSelector';
@@ -28,89 +29,85 @@ const TimePeriodRequester = React.createClass({
 
     return (
       <form className='container-fluid'>
-        <div className='row'>
-          <div className='col-md-6'>
-            <h3>Start Time</h3>
+        <div className='col-md-6'>
+          <h3>Start Time</h3>
 
-            <YearSelector 
-              endOrStart='start'
-              defaultYear={starttime.year}
-              onYearChange={this.onTimeInputChange('start', 'month')}
-              />
+          <YearSelector 
+            endOrStart='start'
+            defaultYear={starttime.year}
+            onYearChange={this.onTimeInputChange('start', 'month')}
+            />
 
-            <MonthSelector 
-              endOrStart='start' 
-              defaultMonth={starttime.month}
-              onMonthChange={this.onTimeInputChange('start', 'month')}
-              />
+          <MonthSelector 
+            endOrStart='start' 
+            defaultMonth={starttime.month}
+            onMonthChange={this.onTimeInputChange('start', 'month')}
+            />
 
-            <DaySelector
-              endOrStart='start'
-              defaultDay={starttime.day}
-              onDayChange={this.onTimeInputChange('start', 'day')}
-              />
+          <DaySelector
+            endOrStart='start'
+            defaultDay={starttime.day}
+            onDayChange={this.onTimeInputChange('start', 'day')}
+            />
 
-            <HourInput
-              endOrStart='start'
-              defaultHour={starttime.hour}
-              onHourChange={this.onTimeInputChange('start', 'hour')}
-              />
+          <HourInput
+            endOrStart='start'
+            defaultHour={starttime.hour}
+            onHourChange={this.onTimeInputChange('start', 'hour')}
+            />
 
-            <MinuteInput
-              endOrStart='start'
-              defaultMinute={starttime.minute}
-              onMinuteChange={this.onTimeInputChange('start', 'minute')}
-              />
+          <MinuteInput
+            endOrStart='start'
+            defaultMinute={starttime.minute}
+            onMinuteChange={this.onTimeInputChange('start', 'minute')}
+            />
 
-            <SecondInput
-              endOrStart='start'
-              defaultSecond={starttime.second}
-              onSecondChange={this.onTimeInputChange('start', 'second')}
-              />
-          </div>
+          <SecondInput
+            endOrStart='start'
+            defaultSecond={starttime.second}
+            onSecondChange={this.onTimeInputChange('start', 'second')}
+            />
         </div>
 
-        <div className='row'>
-          <div className='col-md-6'>
-            <h3>End Time</h3>
+        <div className='col-md-6'>
+          <h3>End Time</h3>
 
-            <YearSelector
-              endOrStart='end'
-              defaultYear={endtime.year}
-              onYearChange={this.onTimeInputChange('end', 'year')}
-              />
+          <YearSelector
+            endOrStart='end'
+            defaultYear={endtime.year}
+            onYearChange={this.onTimeInputChange('end', 'year')}
+            />
 
 
-            <MonthSelector 
-              endOrStart='end' 
-              defaultMonth={endtime.month}
-              onMonthChange={this.onTimeInputChange('end', 'month')}
-              />
+          <MonthSelector 
+            endOrStart='end' 
+            defaultMonth={endtime.month}
+            onMonthChange={this.onTimeInputChange('end', 'month')}
+            />
 
-            <DaySelector
-              endOrStart='end'
-              defaultDay={endtime.day}
-              onDayChange={this.onTimeInputChange('end', 'day')}
-              />
+          <DaySelector
+            endOrStart='end'
+            defaultDay={endtime.day}
+            onDayChange={this.onTimeInputChange('end', 'day')}
+            />
 
-            <HourInput
-              endOrStart='end'
-              defaultHour={endtime.minute}
-              onHourChange={this.onTimeInputChange('end', 'hour')}
-              />
+          <HourInput
+            endOrStart='end'
+            defaultHour={endtime.minute}
+            onHourChange={this.onTimeInputChange('end', 'hour')}
+            />
 
-            <MinuteInput
-              endOrStart='end'
-              defaultMinute={endtime.minute}
-              onMinuteChange={this.onTimeInputChange('end', 'minute')}
-              />
+          <MinuteInput
+            endOrStart='end'
+            defaultMinute={endtime.minute}
+            onMinuteChange={this.onTimeInputChange('end', 'minute')}
+            />
 
-            <SecondInput
-              endOrStart='end'
-              defaultSecond={endtime.second}
-              onSecondChange={this.onTimeInputChange('end', 'second')}
-              />
-          </div>
+          <SecondInput
+            endOrStart='end'
+            defaultSecond={endtime.second}
+            onSecondChange={this.onTimeInputChange('end', 'second')}
+            />
         </div>
       </form>
     );

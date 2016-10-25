@@ -8,6 +8,7 @@ const OverviewPage = React.createClass({
         <h1>Overview</h1>
 
         <section className='container-fluid overview-requester-section'>
+          <h2>Request Earthquakes by Time Range</h2>
           <ConnectedTimePeriodRequester />
         </section>
 
