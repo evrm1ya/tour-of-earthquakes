@@ -12,7 +12,7 @@ const INITIAL_STATE = {
     responseError: null,
   },
   overview: {
-    overviewCanRender: true,
+    overviewCanRender: false,
     topFiveMagnitudes: []
   },
   request: {

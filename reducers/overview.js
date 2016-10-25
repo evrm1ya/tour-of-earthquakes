@@ -6,6 +6,11 @@ import INITIAL_STATE from './initial-state';
 
 export default function overview(state = INITIAL_STATE.overview, action) {
   switch (action.type) {
+    case TOGGLE_OVERVIEW_CAN_RENDER:
+      return {
+        ...state,
+        overviewCanRender: action.bool
+      };
     case SET_TOP_FIVE_MAGNITUDE_EARTHQUAKES:
       return {
         ...state,

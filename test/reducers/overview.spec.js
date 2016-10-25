@@ -18,5 +18,10 @@ describe('overview reducer', () => {
       { id: 'def', mag: 2.0 },
     ]);
   });
+
+  it('toggles the overviewCanRender state', () => {
+    const newState = rootReducer(undefined, actions.toggleOverviewCanRender(true));
+    expect(newState.overview.overviewCanRender).to.be.true;
+  });
 });
 
