@@ -124,5 +124,11 @@ describe('request reducer', () => {
     expect(state3.request.isRequesting).to.be.true;
     expect(state3.request.lastRequestUrl).to.equal('api.test.com');
   });
+
+  it('sets the last request time', () => {
+    const newState = rootReducer(undefined, creators.setLastRequestTime(12345));
+
+    expect(newState.request.lastRequestTime).to.equal(12345);
+  });
 });
 

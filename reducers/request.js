@@ -4,7 +4,8 @@ import {
   UPDATE_REQUEST_ENDTIME,
   UPDATE_REQUEST_STARTTIME,
   SET_LAST_REQUEST_URL,
-  TOGGLE_IS_REQUESTING
+  TOGGLE_IS_REQUESTING,
+  SET_LAST_REQUEST_TIME
 } from '../actions';
 
 export default function request(state = INITIAL_STATE.request, action) {
@@ -28,6 +29,11 @@ export default function request(state = INITIAL_STATE.request, action) {
       return {
         ...state,
         starttime: merge(state.starttime, action.payload)
+      };
+    case SET_LAST_REQUEST_TIME:
+      return {
+        ...state,
+        lastRequestTime: action.date
       };
     default:
       return state;
