@@ -8,8 +8,9 @@ const INITIAL_STATE = {
     metadata: {},
     sortedByMagnitude: []
   },
-  errors: {
-    responseError: null,
+  logging: {
+    history: [],
+    requestError: null,
   },
   overview: {
     overviewCanRender: false,
