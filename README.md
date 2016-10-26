@@ -12,6 +12,8 @@
 * `npm run test`
 
 ## TODOS
+* Time range request validation
+* Table sorting
 * Graphs for eqs by area and time
 * Detailed eq views
 * Better webpack config - build and dev
