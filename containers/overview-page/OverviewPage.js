@@ -1,5 +1,6 @@
 import React from 'react';
 import ConnectedTimePeriodRequester from '../forms/ConnectedTimePeriodRequester';
+import ConnectedOverviewEarthquakeTable from '../tables/ConnectedOverviewEarthquakeTable';
 
 const OverviewPage = React.createClass({
   render: function() {
@@ -22,6 +23,7 @@ const OverviewPage = React.createClass({
         </section>
 
         <section className='overview-table-section'>
+          <ConnectedOverviewEarthquakeTable />
         </section>
       </div>
     );
