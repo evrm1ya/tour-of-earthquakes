@@ -1,5 +1,6 @@
 import React from 'react';
 import ConnectedTimePeriodRequester from '../forms/ConnectedTimePeriodRequester';
+import ConnectedTopFiveMagnitudeTable from '../tables/ConnectedTopFiveMagnitudeTable';
 import ConnectedOverviewEarthquakeTable from '../tables/ConnectedOverviewEarthquakeTable';
 
 const OverviewPage = React.createClass({
@@ -17,6 +18,8 @@ const OverviewPage = React.createClass({
             <div className='col-md-4'>
             </div>
             <div className='col-md-4'>
+              <h3>Top Five Magnitudes</h3>
+              <ConnectedTopFiveMagnitudeTable />
             </div>
             <div className='col-md-4'>
             </div>
