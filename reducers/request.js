@@ -33,7 +33,7 @@ export default function request(state = INITIAL_STATE.request, action) {
     case SET_LAST_REQUEST_TIME:
       return {
         ...state,
-        lastRequestTime: action.date
+        lastRequestTime: action.time
       };
     default:
       return state;

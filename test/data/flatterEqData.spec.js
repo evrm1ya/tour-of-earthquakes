@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import TEST_API_DATA from '../test_api_data';
-import flatterEqData from '../../api/flatterEqData';
+import flatterEqData from '../../utils/data/flatterEqData';
 
 describe('flatterEqData', () => {
   let data;

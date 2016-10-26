@@ -38,7 +38,7 @@ const TimePeriodRequester = React.createClass({
             <YearSelector 
               endOrStart='start'
               defaultYear={starttime.year}
-              onYearChange={this.onTimeInputChange('start', 'month')}
+              onYearChange={this.onTimeInputChange('start', 'year')}
               />
 
             <MonthSelector 
@@ -96,7 +96,7 @@ const TimePeriodRequester = React.createClass({
 
             <HourInput
               endOrStart='end'
-              defaultHour={endtime.minute}
+              defaultHour={endtime.hour}
               onHourChange={this.onTimeInputChange('end', 'hour')}
               />
 
@@ -115,7 +115,10 @@ const TimePeriodRequester = React.createClass({
         </div>
 
         <div className='row'>
-          <button type='button' className='btn btn-primary'>
+          <button type='button' 
+            className='btn btn-primary'
+            onClick={this.props.fetchEqDataByTimeRange}
+            >
             Request Earthquakes
           </button>
         </div>

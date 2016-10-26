@@ -31,10 +31,16 @@ export function toggleIsRequesting() {
   return { type: TOGGLE_IS_REQUESTING };
 }
 
-export function setLastRequestTime(date) {
+export function setLastRequestTime(time) {
   return {
     type: SET_LAST_REQUEST_TIME,
-    date
+    time
   };
 }
+
+export const updateInitialRequest = (requestUrl, time) => (dispatch) => {
+  dispatch(setLastRequestUrl(requestUrl));
+  dispatch(toggleIsRequesting());
+  dispatch(setLastRequestTime(time));
+};
 

@@ -17,4 +17,8 @@ export function addMessageToHistory(payload) {
   };
 }
 
+export const logMessage = (creator, message, historyPayload) => (dispatch) => {
+  dispatch(creator(message));
+  dispatch(addMessageToHistory(historyPayload));
+};
 

@@ -3,7 +3,7 @@ import rootReducer from '../../reducers';
 import * as actions from '../../actions';
 import TEST_API_DATA from '../test_api_data';
 import MOCK_MAGNITUDE_DATA from '../mock_magnitude_data';
-import flatterEqData from '../../api/flatterEqData';
+import flatterEqData from '../../utils/data/flatterEqData';
 import { largestItemToSmallestByProp } from '../../utils/sorting';
 
 describe('earthquakes reducer', () => {

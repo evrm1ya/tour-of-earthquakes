@@ -3,7 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
   updateRequestEndtime,
-  updateRequestStarttime
+  updateRequestStarttime,
+  fetchEqDataByTimeRange
 } from '../../actions';
 import TimePeriodRequester from '../../components/forms/TimePeriodRequester';
 
@@ -17,7 +18,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     updateRequestEndtime,
-    updateRequestStarttime
+    updateRequestStarttime,
+    fetchEqDataByTimeRange
   }, dispatch);
 }
 
