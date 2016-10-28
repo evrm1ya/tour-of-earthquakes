@@ -11,10 +11,12 @@
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-polyfill": "^6.9.1",
+    "highcharts": "^5.0.2",
     "moment": "^2.14.1",
     "ramda": "^0.22.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "react-highcharts": "^11.0.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.5.2",
