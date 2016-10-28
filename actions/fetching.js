@@ -10,7 +10,8 @@ import {
 } from './earthquakes';
 import { 
   setTopFiveMagnitudeEarthquakes,
-  toggleOverviewCanRender
+  toggleOverviewCanRender,
+  setTopFiveEarthquakeFrequenciesByLocation
 } from './overview';
 import { 
   updateInitialRequest,
@@ -21,15 +22,18 @@ import flatterEqData from '../utils/data/flatterEqData';
 import { startAndEndTimeEqQuery } from '../utils/queries/startAndEndTimeEqQuery';
 import firstN from '../utils/list/firstN';
 import { largestItemToSmallestByProp } from '../utils/sorting';
+import { earthquakeFrequenciesByLocation } from '../utils/locations/earthquakeFrequenciesByLocation';
 
 const routeEarthquakeData = json => dispatch => {
   const flattenedEarthquakes = flatterEqData(json);
   const earthquakesByMagnitude = largestItemToSmallestByProp('mag', flattenedEarthquakes);
+  const topFiveLocations = firstN(5, earthquakeFrequenciesByLocation(flattenedEarthquakes));
 
   dispatch(setEarthquakeMetadata(json.metadata));
   dispatch(setFlattenedEarthquakeData(flattenedEarthquakes));
   dispatch(setEarthquakesSortedByMagnitude(earthquakesByMagnitude));
   dispatch(setTopFiveMagnitudeEarthquakes(firstN(5, earthquakesByMagnitude)));
+  dispatch(setTopFiveEarthquakeFrequenciesByLocation(topFiveLocations));
 };
 
 export const fetchEqDataByTimeRange = () => (dispatch, getState) => {

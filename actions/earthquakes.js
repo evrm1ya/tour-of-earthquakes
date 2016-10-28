@@ -24,3 +24,4 @@ export function setEarthquakesSortedByMagnitude(earthquakesByMagnitude) {
     earthquakesByMagnitude
   };
 }
+

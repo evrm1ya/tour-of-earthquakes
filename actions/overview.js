@@ -1,6 +1,7 @@
 import {
   TOGGLE_OVERVIEW_CAN_RENDER,
-  SET_TOP_FIVE_MAGNITUDE_EARTHQUAKES
+  SET_TOP_FIVE_MAGNITUDE_EARTHQUAKES,
+  SET_TOP_FIVE_EARTHQUAKE_FREQUENCIES_BY_LOCATION
 } from './types';
 
 export function toggleOverviewCanRender(bool) {
@@ -16,4 +17,12 @@ export function setTopFiveMagnitudeEarthquakes(topFiveMagnitudeEarthquakes) {
     topFiveMagnitudeEarthquakes
   };
 }
+
+export function setTopFiveEarthquakeFrequenciesByLocation(topFiveLocations = []) {
+  return {
+    type: SET_TOP_FIVE_EARTHQUAKE_FREQUENCIES_BY_LOCATION,
+    topFiveLocations
+  };
+}
+
 
