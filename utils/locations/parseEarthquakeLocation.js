@@ -14,5 +14,7 @@ export default function parseEarthquakeLocation(place) {
   if (place.includes(' of ')) {
     return split(' of ', place)[1];
   }
+
+  return place;
 }
 
