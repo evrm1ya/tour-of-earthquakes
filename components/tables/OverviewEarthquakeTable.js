@@ -12,7 +12,7 @@ const OverviewEarthquakeTable = React.createClass({
       } = earthquake;
 
       return (
-        <tr>
+        <tr key={id}>
           <td>{id}</td>
           <td>{time}</td>
           <td>{place}</td>

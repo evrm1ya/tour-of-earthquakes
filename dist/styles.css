@@ -1,3 +1,7 @@
+th, td {
+  text-align: center;
+}
+
 .loading {
   margin-left: 20px;
 }
@@ -8,4 +12,72 @@
 
 .earthquake-table th, td {
   padding: 5px 10px;
+}
+
+.requester-dropdown, .requester-dropdown .dropdown-menu {
+  margin-right: 20px;
+}
+
+.requester-dropdown .dropdown-menu {
+  padding: 20px;
+  width: 300px;
+}
+
+.time-period-requester {
+  display: flex;
+  flex-direction: column;
+}
+
+.request-time-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.request-time-wrapper > h3 {
+  margin-top: 0;
+}
+
+.request-time-wrapper .date, .request-time-wrapper .time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.request-time-wrapper input {
+  text-align: center;
+  width: 50px;
+}
+
+.overview-graphs-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.overview-graphs-section .graph-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  min-height: 300px;
+  background-color: #f0f0f0;
+  margin-top: 10px;
+}
+
+.overview-table-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  background-color: #f0f0f0;
+  min-height: 500px;
+}
+
+.overvew-table-section h2 {
+  align-self: top;
 }

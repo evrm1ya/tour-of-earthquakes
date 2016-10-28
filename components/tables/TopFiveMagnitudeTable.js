@@ -11,7 +11,7 @@ const TopFiveMagnitudeTable = React.createClass({
       const { id, mag, place } = earthquake;
 
       return (
-        <tr>
+        <tr key={id}>
           <td>{id}</td>
           <td>{mag}</td>
           <td>{place}</td>
@@ -30,9 +30,11 @@ const TopFiveMagnitudeTable = React.createClass({
     return (
       <table className='table table-striped'>
         <thead>
-          <th>ID</th>
-          <th>Magnitude</th>
-          <th>Place</th>
+          <tr>
+            <th>ID</th>
+            <th>Magnitude</th>
+            <th>Place</th>
+          </tr>
         </thead>
 
         <tbody>

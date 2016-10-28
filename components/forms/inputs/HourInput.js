@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const HourInput = props => (
-  <div className='col-xs-2 form-group'>
+  <div className='form-group'>
     <label htmlFor={props.endOrStart + '-hour'}>Hour</label>
     <input className='form-control'
       defaultValue={props.defaultHour}

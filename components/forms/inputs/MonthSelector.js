@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const MonthSelector = props => {
   return (
-    <div className='col-xs-2 form-group'>
+    <div className='form-group'>
       <label htmlFor={props.endOrStart + '-month'}>Month</label>
       <select className='form-control' 
         defaultValue={props.defaultMonth}

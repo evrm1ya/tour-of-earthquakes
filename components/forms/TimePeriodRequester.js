@@ -30,11 +30,10 @@ const TimePeriodRequester = React.createClass({
     const { starttime, endtime } = this.props;
 
     return (
-      <form className='container-fluid'>
-        <div className='row'>
-          <div className='col-md-6'>
-            <h3>Start Time</h3>
-
+      <form className='time-period-requester'>
+        <div className='request-time-wrapper'>
+          <h3>Start Time</h3>
+          <div className='date'>
             <YearSelector 
               endOrStart='start'
               defaultYear={starttime.year}
@@ -52,7 +51,9 @@ const TimePeriodRequester = React.createClass({
               defaultDay={starttime.day}
               onDayChange={this.onTimeInputChange('start', 'day')}
               />
+          </div>
 
+          <div className='time'>
             <HourInput
               endOrStart='start'
               defaultHour={starttime.hour}
@@ -71,16 +72,17 @@ const TimePeriodRequester = React.createClass({
               onSecondChange={this.onTimeInputChange('start', 'second')}
               />
           </div>
+        </div>
 
-          <div className='col-md-6'>
-            <h3>End Time</h3>
+        <div className='request-time-wrapper'>
+          <h3>End Time</h3>
 
+          <div className='date'>
             <YearSelector
               endOrStart='end'
               defaultYear={endtime.year}
               onYearChange={this.onTimeInputChange('end', 'year')}
               />
-
 
             <MonthSelector 
               endOrStart='end' 
@@ -93,7 +95,9 @@ const TimePeriodRequester = React.createClass({
               defaultDay={endtime.day}
               onDayChange={this.onTimeInputChange('end', 'day')}
               />
+          </div>
 
+          <div className='time'>
             <HourInput
               endOrStart='end'
               defaultHour={endtime.hour}
@@ -114,14 +118,12 @@ const TimePeriodRequester = React.createClass({
           </div>
         </div>
 
-        <div className='row'>
-          <button type='button' 
-            className='btn btn-primary'
-            onClick={this.props.fetchEqDataByTimeRange}
-            >
-            Request Earthquakes
-          </button>
-        </div>
+        <button type='button' 
+          className='btn btn-primary'
+          onClick={this.props.fetchEqDataByTimeRange}
+          >
+          Request Earthquakes
+        </button>
       </form>
     );
   }
