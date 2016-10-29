@@ -1,6 +1,7 @@
 import React from 'react';
 import ConnectedTopFiveMagnitudeTable from '../tables/ConnectedTopFiveMagnitudeTable';
 import ConnectedOverviewEarthquakeTable from '../tables/ConnectedOverviewEarthquakeTable';
+import ConnectedTopFiveEarthquakeFrequencyLocationsGraph from '../graphs/ConnectedTopFiveEarthquakeFrequencyLocationsGraph';
 
 const OverviewPage = React.createClass({
   render: function() {
@@ -10,6 +11,7 @@ const OverviewPage = React.createClass({
 
         <section className='overview-graphs-section'>
             <div className='graph-wrapper'>
+              <ConnectedTopFiveEarthquakeFrequencyLocationsGraph />
             </div>
 
             <div className='graph-wrapper'>

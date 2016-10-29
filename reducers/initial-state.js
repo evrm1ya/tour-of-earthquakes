@@ -14,7 +14,8 @@ const INITIAL_STATE = {
   },
   overview: {
     overviewCanRender: false,
-    topFiveMagnitudes: []
+    topFiveMagnitudes: [],
+    topFiveEarthquakeFrequenciesByLocation: []
   },
   request: {
     endtime: requestTime.end,
