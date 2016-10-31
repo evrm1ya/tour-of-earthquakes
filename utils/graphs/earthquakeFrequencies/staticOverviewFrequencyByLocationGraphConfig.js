@@ -2,7 +2,7 @@ const staticOverviewFrequencyByLocationGraphConfig = {
   chart: {
     type: 'column',
     height: 300,
-    width: 400
+    width: 450
   },
 
   legend: {

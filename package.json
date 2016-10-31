@@ -4,7 +4,8 @@
   "description": "A practice react-redux app",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive -w test/"
+    "test": "mocha --compilers js:babel-register --recursive -w test/",
+    "build": "webpack --config webpack.config.prod.js"
   },
   "author": "",
   "license": "ISC",
