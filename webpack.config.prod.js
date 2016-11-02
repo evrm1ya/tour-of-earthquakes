@@ -18,17 +18,35 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin()
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   ],
 
   module: {
     loaders: [
       {
         text: /\.js$/,
-        loaders: ['babel'],
-        exclude: /node_modules/
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'react'],
+          plugins: ['ramda', 'transform-object-rest-spread']
+        }
       }
     ]
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.json', '.coffee']
   }
 };
 
