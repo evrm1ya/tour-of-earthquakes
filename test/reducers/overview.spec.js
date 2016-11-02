@@ -43,5 +43,26 @@ describe('overview reducer', () => {
         { location: 'Easter Island', frequency: 2 }
       ]);
   });
+
+  it('toggles magnitudeSorterMenuIsVisible', () => {
+    const newState = rootReducer(undefined, actions.toggleMagnitudeSorterMenuIsVisible());
+    expect(newState.overview.magnitudeSorterMenuIsVisible).to.be.true;
+
+    const newerState = rootReducer(newState, actions.toggleMagnitudeSorterMenuIsVisible());
+    expect(newerState.overview.magnitudeSorterMenuIsVisible).to.be.false;
+  });
+
+  it('toggles timeSorterMenuIsVisible', () => {
+    const newState = rootReducer(undefined, actions.toggleTimeSorterMenuIsVisible());
+    expect(newState.overview.timeSorterMenuIsVisible).to.be.true;
+
+    const newerState = rootReducer(newState, actions.toggleTimeSorterMenuIsVisible());
+    expect(newerState.overview.timeSorterMenuIsVisible).to.be.false;
+  });
+
+  it('sets the allEarthquakesTableSortedBy', () => {
+    const newState = rootReducer(undefined, actions.setAllEarthquakesTableSortedBy('timeLowToHigh'));
+    expect(newState.overview.allEarthquakesTableSortedBy).to.equal('timeLowToHigh');
+  });
 });
 

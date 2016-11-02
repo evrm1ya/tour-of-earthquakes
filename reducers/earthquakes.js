@@ -2,7 +2,8 @@ import INITIAL_STATE from './initial-state';
 import {
   SET_EARTHQUAKE_METADATA,
   SET_FLATTENED_EARTHQUAKE_DATA,
-  SET_EARTHQUAKES_SORTED_BY_MAGNITUDE
+  SET_EARTHQUAKES_SORTED_BY_MAGNITUDE,
+  SET_EARTHQUAKES_SORTED_BY_TIME
 } from '../actions';
 
 export default function earthquakes(state = INITIAL_STATE.earthquakes, action) {
@@ -21,6 +22,11 @@ export default function earthquakes(state = INITIAL_STATE.earthquakes, action) {
       return {
         ...state,
         sortedByMagnitude: action.earthquakesByMagnitude
+      };
+    case SET_EARTHQUAKES_SORTED_BY_TIME:
+      return {
+        ...state,
+        sortedByTime: action.earthquakesByTime
       };
     default:
       return state;

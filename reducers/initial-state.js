@@ -6,16 +6,20 @@ const INITIAL_STATE = {
   earthquakes: {
     flattened: [],
     metadata: {},
-    sortedByMagnitude: []
+    sortedByMagnitude: [],
+    sortedByTime: []
   },
   logging: {
     history: [],
     requestError: null,
   },
   overview: {
+    allEarthquakesTableSortedBy: 'timeHighToLow',
+    magnitudeSorterMenuIsVisible: false,
     overviewCanRender: false,
     topFiveMagnitudes: [],
-    topFiveEarthquakeFrequenciesByLocation: []
+    topFiveEarthquakeFrequenciesByLocation: [],
+    timeSorterMenuIsVisible: false
   },
   request: {
     endtime: requestTime.end,

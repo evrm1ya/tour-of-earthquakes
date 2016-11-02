@@ -6,7 +6,8 @@ import {
 import {
   setEarthquakeMetadata,
   setFlattenedEarthquakeData,
-  setEarthquakesSortedByMagnitude
+  setEarthquakesSortedByMagnitude,
+  setEarthquakesSortedByTime
 } from './earthquakes';
 import { 
   setTopFiveMagnitudeEarthquakes,
@@ -32,6 +33,7 @@ const routeEarthquakeData = json => dispatch => {
   dispatch(setEarthquakeMetadata(json.metadata));
   dispatch(setFlattenedEarthquakeData(flattenedEarthquakes));
   dispatch(setEarthquakesSortedByMagnitude(earthquakesByMagnitude));
+  dispatch(setEarthquakesSortedByTime(largestItemToSmallestByProp('time', flattenedEarthquakes)));
   dispatch(setTopFiveMagnitudeEarthquakes(firstN(5, earthquakesByMagnitude)));
   dispatch(setTopFiveEarthquakeFrequenciesByLocation(topFiveLocations));
 };

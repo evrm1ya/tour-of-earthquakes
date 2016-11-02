@@ -121,5 +121,28 @@ describe('earthquakes reducer', () => {
       { id: 'jkl', mag: 1.0 },
     ]);
   });
+
+  it('stores all earthquakes sorted by time', () => {
+    const mock = [
+      { id: 'abc', time: 555 },
+      { id: 'xyz', time: 222 },
+      { id: 'def', time: 777 },
+      { id: 'pqr', time: 333 },
+      { id: 'jkl', time: 111 }
+    ];
+
+    const newState = rootReducer(
+      undefined,
+      actions.setEarthquakesSortedByTime(largestItemToSmallestByProp('time', mock))
+    );
+
+    expect(newState.earthquakes.sortedByTime).to.eql([
+      { id: 'def', time: 777 },
+      { id: 'abc', time: 555 },
+      { id: 'pqr', time: 333 },
+      { id: 'xyz', time: 222 },
+      { id: 'jkl', time: 111 }
+    ]);
+  });
 });
 

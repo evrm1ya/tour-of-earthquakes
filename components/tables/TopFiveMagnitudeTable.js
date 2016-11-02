@@ -28,7 +28,7 @@ const TopFiveMagnitudeTable = React.createClass({
     }
 
     return (
-      <table className='table table-striped'>
+      <table className='table table-striped table-bordered'>
         <thead>
           <tr>
             <th>ID</th>
