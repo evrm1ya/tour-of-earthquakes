@@ -3,7 +3,7 @@ import { map } from 'ramda';
 import msToHumanFriendlyDate from '../../utils/dates/msToHumanFriendlyDate';
 
 const OverviewEarthquakeTable = React.createClass({
-  tableRowsSorted: function(sortedEarthquakes) {
+  renderTableRows: function() {
     return map(earthquake => {
       const {
         id,
@@ -22,28 +22,11 @@ const OverviewEarthquakeTable = React.createClass({
           <td><a href={url}>{url}</a></td>
         </tr>
       );
-    }, sortedEarthquakes);
+    }, this.props.earthquakesSortedByTime);
   },
 
-  renderTableRows: function() {
-    const {
-      allEarthquakesTableSortedBy,
-      earthquakesSortedByTime,
-      earthquakesSortedByMagnitude
-    } = this.props;
-
-    switch (allEarthquakesTableSortedBy) {
-      case 'timeHighToLow':
-        return this.tableRowsSorted(earthquakesSortedByTime);
-      case 'timeLowToHigh':
-        return this.tableRowsSorted(earthquakesSortedByTime.reverse());
-      case 'magnitudeHighToLow':
-        return this.tableRowsSorted(earthquakesSortedByMagnitude);
-      case 'magnitudeLowToHigh':
-        return this.tableRowsSorted(earthquakesSortedByMagnitude.reverse());
-      default:
-        return this.tableRowsSorted(earthquakesSortedByTime);
-    }
+  onTimeDropdownSortByClick: function() {
+    this.props.toggleTimeSorterMenuIsVisible();
   },
 
   onSortCategoryClick: function(sortedBy) {
@@ -71,7 +54,7 @@ const OverviewEarthquakeTable = React.createClass({
               <div className='btn-group btn-group-xs'>
                 <button type='button' 
                   className='btn btn-default dropdown-toggle'
-                  onClick={() => this.props.toggleTimeSorterMenuIsVisible()}
+                  onClick={this.onTimeDropdownSortByClick}
                   >
                   <b>Time</b>
                   <span className='caret'></span>
