@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import msToHumanFriendlyDate from '../../utils/dates/msToHumanFriendlyDate';
 
 const OverviewEarthquakeTable = React.createClass({
   renderTableRows: function() {
@@ -14,10 +15,10 @@ const OverviewEarthquakeTable = React.createClass({
       return (
         <tr key={id}>
           <td>{id}</td>
-          <td>{time}</td>
+          <td>{msToHumanFriendlyDate(time)}</td>
           <td>{place}</td>
           <td>{mag}</td>
-          <td>{url}</td>
+          <td><a href={url}>{url}</a></td>
         </tr>
       );
     });

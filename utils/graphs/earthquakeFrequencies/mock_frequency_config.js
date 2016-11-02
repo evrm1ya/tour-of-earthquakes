@@ -2,7 +2,7 @@ const MOCK_FREQUENCY_CONFIG = {
   chart: {
     type: 'column',
     height: 300,
-    width: 500
+    width: 450
   },
 
   legend: {

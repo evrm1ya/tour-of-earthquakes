@@ -11,7 +11,8 @@ import TimePeriodRequester from '../../components/forms/TimePeriodRequester';
 function mapStateToProps(state) {
   return {
     endtime: state.request.endtime,
-    starttime: state.request.starttime
+    starttime: state.request.starttime,
+    isRequesting: state.request.isRequesting
   };
 }
 

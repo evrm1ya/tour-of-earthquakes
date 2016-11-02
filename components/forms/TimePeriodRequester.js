@@ -121,8 +121,11 @@ const TimePeriodRequester = React.createClass({
         <button type='button' 
           className='btn btn-primary'
           onClick={this.props.fetchEqDataByTimeRange}
+          disabled={this.props.isRequesting}
           >
-          Request Earthquakes
+          {this.props.isRequesting
+            ? "Loading"
+            : "Request Earthquakes"}
         </button>
       </form>
     );

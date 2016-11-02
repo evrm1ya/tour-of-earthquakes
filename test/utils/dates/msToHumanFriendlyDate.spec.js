@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { msToHumanFriendlyDate } from '../../../utils/dates/msToHumanFriendlyDate';
+import msToHumanFriendlyDate from '../../../utils/dates/msToHumanFriendlyDate';
 
 describe('msToHumanFriendly', () => {
   it('returns a human readable date from ms', () => {
