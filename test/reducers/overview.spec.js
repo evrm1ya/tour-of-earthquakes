@@ -64,5 +64,19 @@ describe('overview reducer', () => {
     const newState = rootReducer(undefined, actions.setAllEarthquakesTableSortedBy('timeLowToHigh'));
     expect(newState.overview.allEarthquakesTableSortedBy).to.equal('timeLowToHigh');
   });
+
+  it('sets sortedEarthquakesForAllEarthquakesTable', () => {
+    const newState = rootReducer(undefined, actions.setSortedEarthquakesForAllEarthquakesTable([
+      { id: 1, mag: 5 },
+      { id: 2, mag: 4 },
+      { id: 3, mag: 3 }
+    ]));
+
+    expect(newState.overview.sortedEarthquakesForAllEarthquakesTable).to.eql([
+      { id: 1, mag: 5 },
+      { id: 2, mag: 4 },
+      { id: 3, mag: 3 }
+    ]);
+  });
 });
 

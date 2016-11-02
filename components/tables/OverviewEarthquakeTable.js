@@ -22,23 +22,27 @@ const OverviewEarthquakeTable = React.createClass({
           <td><a href={url}>{url}</a></td>
         </tr>
       );
-    }, this.props.earthquakesSortedByTime);
+    }, this.props.sortedEarthquakes);
   },
 
-  onTimeDropdownSortByClick: function() {
+  onSortByTimeDropdownClick: function() {
     this.props.toggleTimeSorterMenuIsVisible();
   },
 
+  onSortByMagnitudeDropdownClick: function() {
+    this.props.toggleMagnitudeSorterMenuIsVisible();
+  },
+
   onSortCategoryClick: function(sortedBy) {
-    const { setAllEarthquakesTableSortedBy } = this.props;
+    const { sortAllEarthquakesTable } = this.props;
 
     return function(event) {
-      setAllEarthquakesTableSortedBy(sortedBy);
+      sortAllEarthquakesTable(sortedBy);
     }
   },
 
   render: function() {
-    if (this.props.earthquakesSortedByTime.length === 0) {
+    if (this.props.sortedEarthquakes.length === 0) {
       return (
         <p>There are no earthquakes in the requested dataset.</p>
       );
@@ -54,7 +58,7 @@ const OverviewEarthquakeTable = React.createClass({
               <div className='btn-group btn-group-xs'>
                 <button type='button' 
                   className='btn btn-default dropdown-toggle'
-                  onClick={this.onTimeDropdownSortByClick}
+                  onClick={this.onSortByTimeDropdownClick}
                   >
                   <b>Time</b>
                   <span className='caret'></span>
@@ -90,7 +94,7 @@ const OverviewEarthquakeTable = React.createClass({
                 <button 
                   type='button' 
                   className='btn btn-default dropdown-toggle'
-                  onClick={() => this.props.toggleMagnitudeSorterMenuIsVisible()}
+                  onClick={this.onSortByMagnitudeDropdownClick}
                   >
                   <b>Magnitude</b>
                   <span className='caret'></span>

@@ -14,9 +14,10 @@ const INITIAL_STATE = {
     requestError: null,
   },
   overview: {
-    allEarthquakesTableSortedBy: 'timeHighToLow',
+    allEarthquakesTableSortedBy: '',
     magnitudeSorterMenuIsVisible: false,
     overviewCanRender: false,
+    sortedEarthquakesForAllEarthquakesTable: [],
     topFiveMagnitudes: [],
     topFiveEarthquakeFrequenciesByLocation: [],
     timeSorterMenuIsVisible: false

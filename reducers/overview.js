@@ -4,7 +4,8 @@ import {
   SET_TOP_FIVE_EARTHQUAKE_FREQUENCIES_BY_LOCATION,
   TOGGLE_MAGNITUDE_SORTER_MENU_IS_VISIBLE,
   TOGGLE_TIME_SORTER_MENU_IS_VISIBLE,
-  SET_ALL_EARTHQUAKES_TABLE_SORTED_BY
+  SET_ALL_EARTHQUAKES_TABLE_SORTED_BY,
+  SET_SORTED_EARTHQUAKES_FOR_ALL_EARTHQUAKES_TABLE
 } from '../actions';
 import INITIAL_STATE from './initial-state';
 
@@ -39,6 +40,11 @@ export default function overview(state = INITIAL_STATE.overview, action) {
       return {
         ...state,
         allEarthquakesTableSortedBy: action.sortedBy
+      };
+    case SET_SORTED_EARTHQUAKES_FOR_ALL_EARTHQUAKES_TABLE:
+      return {
+        ...state,
+        sortedEarthquakesForAllEarthquakesTable: action.sortedEarthquakes
       };
     default:
       return state;

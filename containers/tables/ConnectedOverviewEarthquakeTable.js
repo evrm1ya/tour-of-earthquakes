@@ -4,24 +4,29 @@ import { connect } from 'react-redux';
 import {
   toggleMagnitudeSorterMenuIsVisible,
   toggleTimeSorterMenuIsVisible,
-  setAllEarthquakesTableSortedBy
+  setAllEarthquakesTableSortedBy,
+  sortAllEarthquakesTable
 } from '../../actions';
 import OverviewEarthquakeTable from '../../components/tables/OverviewEarthquakeTable';
 
 function mapStateToProps(state) {
-  const { sortedByTime, sortedByMagnitude } = state.earthquakes;
+  const { sortedByTime } = state.earthquakes;
   const { 
     allEarthquakesTableSortedBy,
     magnitudeSorterMenuIsVisible, 
-    timeSorterMenuIsVisible 
+    timeSorterMenuIsVisible,
+    sortedEarthquakesForAllEarthquakesTable
   } = state.overview;
 
+  let sortedEarthquakes = (allEarthquakesTableSortedBy === '')
+    ? sortedByTime
+    : sortedEarthquakesForAllEarthquakesTable;
+
   return {
-    earthquakesSortedByTime: sortedByTime,
-    earthquakesSortedByMagnitude: sortedByMagnitude,
     magnitudeSorterMenuIsVisible,
     timeSorterMenuIsVisible,
-    allEarthquakesTableSortedBy
+    allEarthquakesTableSortedBy,
+    sortedEarthquakes
   };
 }
 
@@ -29,7 +34,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     toggleMagnitudeSorterMenuIsVisible,
     toggleTimeSorterMenuIsVisible,
-    setAllEarthquakesTableSortedBy
+    sortAllEarthquakesTable
   }, dispatch);
 }
 
