@@ -4,8 +4,10 @@ import App from '../containers/App';
 import OverviewPage from '../containers/overview-page/OverviewPage';
 import DetailPage from '../containers/detail-page/DetailPage';
 
-//export default <Route path='/' component={App}>
-export default <Route path='/tour-of-earthquakes/' component={App}>
+const PATH_ROOT = (process.env.NODE_ENV === 'production') ? '/tour-of-earthquakes/' : '/'
+
+export default <Route path={PATH_ROOT} component={App}>
   <IndexRoute component={OverviewPage} />
-  <Route path='/tour-of-earthquakes/detail' component={DetailPage} />
-</Route>;
+  <Route path={PATH_ROOT + 'detail'} component={DetailPage} />
+</Route>
+
