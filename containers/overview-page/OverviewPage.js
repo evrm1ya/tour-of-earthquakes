@@ -4,6 +4,7 @@ import ConnectedTimePeriodRequester from '../forms/ConnectedTimePeriodRequester'
 import ConnectedTopFiveMagnitudeTable from '../tables/ConnectedTopFiveMagnitudeTable';
 import ConnectedOverviewEarthquakeTable from '../tables/ConnectedOverviewEarthquakeTable';
 import ConnectedTopFiveEarthquakeFrequencyLocationsGraph from '../graphs/ConnectedTopFiveEarthquakeFrequencyLocationsGraph';
+import ConnectedMostRecentEarthquake from '../details/ConnectedMostRecentEarthquake';
 
 const OverviewPage = React.createClass({
   render: function() {
@@ -33,6 +34,7 @@ const OverviewPage = React.createClass({
 
             <div className='graph-wrapper'>
               <h3>Most Recent Earthquake</h3>
+              <ConnectedMostRecentEarthquake />
             </div>
         </section>
 
