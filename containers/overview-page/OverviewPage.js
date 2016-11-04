@@ -32,6 +32,7 @@ const OverviewPage = React.createClass({
             </div>
 
             <div className='graph-wrapper'>
+              <h3>Most Recent Earthquake</h3>
             </div>
         </section>
 

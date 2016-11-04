@@ -33,11 +33,21 @@ const OverviewEarthquakeTable = React.createClass({
     this.props.toggleMagnitudeSorterMenuIsVisible();
   },
 
-  onSortCategoryClick: function(sortedBy) {
-    const { sortAllEarthquakesTable } = this.props;
+  onSortCategoryClick: function(category, sortedBy) {
+    const { 
+      sortAllEarthquakesTable,
+      toggleTimeSorterMenuIsVisible,
+      toggleMagnitudeSorterMenuIsVisible
+    } = this.props;
 
     return function(event) {
       sortAllEarthquakesTable(sortedBy);
+      
+      if (category === 'time') {
+        return toggleTimeSorterMenuIsVisible();
+      }
+
+      toggleMagnitudeSorterMenuIsVisible();
     }
   },
 
@@ -70,7 +80,7 @@ const OverviewEarthquakeTable = React.createClass({
                   >
                   <li>
                     <a href='javascript:void(0)'
-                      onClick={this.onSortCategoryClick('timeHighToLow')}
+                      onClick={this.onSortCategoryClick('time', 'timeHighToLow')}
                       >
                       Highest to Lowest
                     </a>
@@ -78,7 +88,7 @@ const OverviewEarthquakeTable = React.createClass({
 
                   <li>
                     <a href='javascript:void(0)'
-                      onClick={this.onSortCategoryClick('timeLowToHigh')}
+                      onClick={this.onSortCategoryClick('time', 'timeLowToHigh')}
                       >
                       Lowest to Highest
                     </a>
@@ -106,7 +116,7 @@ const OverviewEarthquakeTable = React.createClass({
                   >
                   <li>
                     <a href='javascript:void(0)'
-                      onClick={this.onSortCategoryClick('magnitudeHighToLow')}
+                      onClick={this.onSortCategoryClick('magnitude', 'magnitudeHighToLow')}
                       >
                       Highest to Lowest
                     </a>
@@ -114,7 +124,7 @@ const OverviewEarthquakeTable = React.createClass({
 
                   <li>
                     <a href='javascript:void(0)'
-                      onClick={this.onSortCategoryClick('magnitudeLowToHigh')}
+                      onClick={this.onSortCategoryClick('magnitude', 'magnitudeLowToHigh')}
                       >
                       Lowest to Highest
                     </a>
