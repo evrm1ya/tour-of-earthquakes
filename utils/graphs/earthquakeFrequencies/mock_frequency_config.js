@@ -26,7 +26,7 @@ const MOCK_FREQUENCY_CONFIG = {
   ],
 
   title: {
-    text: 'Earthquakes by Location'
+    text: null
   },
 
   tooltip: {

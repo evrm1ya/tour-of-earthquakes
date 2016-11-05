@@ -10,7 +10,7 @@ const staticOverviewFrequencyByLocationGraphConfig = {
   },
 
   title: {
-    text: 'Earthquakes by Location'
+    text: null
   },
 
   tooltip: {

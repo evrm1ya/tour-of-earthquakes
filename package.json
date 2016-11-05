@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-polyfill": "^6.9.1",
+    "google-map-react": "^0.21.0",
     "highcharts": "^5.0.2",
     "moment": "^2.14.1",
     "ramda": "^0.22.1",

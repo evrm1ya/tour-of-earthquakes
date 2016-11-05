@@ -4,7 +4,7 @@ import ConnectedTimePeriodRequester from '../forms/ConnectedTimePeriodRequester'
 import ConnectedTopFiveMagnitudeTable from '../tables/ConnectedTopFiveMagnitudeTable';
 import ConnectedOverviewEarthquakeTable from '../tables/ConnectedOverviewEarthquakeTable';
 import ConnectedTopFiveEarthquakeFrequencyLocationsGraph from '../graphs/ConnectedTopFiveEarthquakeFrequencyLocationsGraph';
-import ConnectedMostRecentEarthquake from '../details/ConnectedMostRecentEarthquake';
+import ConnectedHighestMagnitudeLocationMap from '../maps/ConnectedHighestMagnitudeLocationMap';
 
 const OverviewPage = React.createClass({
   render: function() {
@@ -22,20 +22,36 @@ const OverviewPage = React.createClass({
       <div className='container-fluid overview-page'>
         <h1>Overview</h1>
 
-        <section className='overview-graphs-section'>
-            <div className='graph-wrapper'>
+        <section className='overview-features-section'>
+          <div className='feature-wrapper'>
+            <div className='feature-title'>
+              <h3>Earthquakes by Location</h3>
+            </div>
+
+            <div className='feature'>
               <ConnectedTopFiveEarthquakeFrequencyLocationsGraph />
             </div>
+          </div>
 
-            <div className='graph-wrapper'>
+          <div className='feature-wrapper'>
+            <div className='feature-title'>
               <h3>Top Five Magnitudes</h3>
+            </div>
+
+            <div className='feature'>
               <ConnectedTopFiveMagnitudeTable />
             </div>
+          </div>
 
-            <div className='graph-wrapper'>
-              <h3>Most Recent Earthquake</h3>
-              <ConnectedMostRecentEarthquake />
+          <div className='feature-wrapper'>
+            <div className='feature-title'>
+              <h3>Highest Magnitude Location</h3>
             </div>
+
+            <div className='feature'>
+              <ConnectedHighestMagnitudeLocationMap />
+            </div>
+          </div>
         </section>
 
         <section className='overview-table-section'>
