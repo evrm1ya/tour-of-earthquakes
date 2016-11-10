@@ -14,6 +14,10 @@ const HighestMagnitudeLocationMap = React.createClass({
 
     return (
       <GoogleMap
+        bootstrapURLKeys={{
+          key: 'AIzaSyAB9-RmNOD0G5KkHldOwRqR3sJjKMqBQYY',
+          language: 'en'
+        }}
         center={[ lat, lng ]}
         defaultZoom={9}
         >
