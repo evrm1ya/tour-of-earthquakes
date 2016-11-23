@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { map } from 'ramda';
+import EarthquakeDetailLink from '../../containers/links/EarthquakeDetailLink';
 
 const TopFiveMagnitudeTable = React.createClass({
   propTypes: {
@@ -12,7 +13,7 @@ const TopFiveMagnitudeTable = React.createClass({
 
       return (
         <tr key={id}>
-          <td>{id}</td>
+          <td><EarthquakeDetailLink id={id} /></td>
           <td>{mag}</td>
           <td>{place}</td>
         </tr>

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { map } from 'ramda';
+import EarthquakeDetailLink from '../../containers/links/EarthquakeDetailLink';
 import msToHumanFriendlyDate from '../../utils/dates/msToHumanFriendlyDate';
 
 const OverviewEarthquakeTable = React.createClass({
@@ -15,7 +16,7 @@ const OverviewEarthquakeTable = React.createClass({
 
       return (
         <tr key={id}>
-          <td>{id}</td>
+          <td><EarthquakeDetailLink id={id} /></td>
           <td>{msToHumanFriendlyDate(time)}</td>
           <td>{place}</td>
           <td>{mag}</td>
