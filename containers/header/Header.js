@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import ConnectedTimePeriodRequester from '../forms/ConnectedTimePeriodRequester';
 
 const Header = React.createClass({
@@ -17,9 +18,9 @@ const Header = React.createClass({
       <nav className='navbar navbar-inverse'>
         <div className='container-fluid'>
           <div className='navbar-header'>
-            <a className='navbar-brand' href='#'>
+            <Link className='navbar-brand' to='/'>
               Tour of Earthquakes
-            </a>
+            </Link>
           </div>
 
           <ul className='nav navbar-nav navbar-right requester-dropdown'>
