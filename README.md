@@ -13,7 +13,8 @@
 
 ## TODOS
 * Time range request validation
-* Table sorting
+* Handle responses without any earthquakes
+* Better date selection
 * Graphs for eqs by area and time
 * Detailed eq views
 * Better webpack config - build and dev
