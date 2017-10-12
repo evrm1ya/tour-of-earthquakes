@@ -7,7 +7,7 @@ var config = require('./webpack.config');
 var app = express();
 var port = process.env.PORT || 3000;
 
-app.use(express.static('dist'));
+app.use(express.static('public'));
 
 var compiler = webpack(config);
 
